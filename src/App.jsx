@@ -361,7 +361,8 @@ export default function App() {
   return (
     <div style={S.surface}>
       <ToastContainer
-        position="top-right"
+{/*         position="top-right" */}
+              position="top-center"
         newestOnTop
         closeOnClick
         pauseOnHover={false}
