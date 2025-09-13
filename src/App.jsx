@@ -466,11 +466,12 @@ export default function App() {
           )}
 
           {raw && (
-            <details style={S.details}>
-              {/* Using a plain summary; advanced chevron styling would require ::marker replacements not allowed inline */}
-              <summary style={S.summary}>Response JSON</summary>
-              <pre style={S.pre}>{JSON.stringify(raw, null, 2)}</pre>
-            </details>
+            ''
+            // <details style={S.details}>
+            //   {/* Using a plain summary; advanced chevron styling would require ::marker replacements not allowed inline */}
+            //   <summary style={S.summary}>Response JSON</summary>
+            //   <pre style={S.pre}>{JSON.stringify(raw, null, 2)}</pre>
+            // </details>
           )}
         </div>
 
