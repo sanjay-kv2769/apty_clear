@@ -8,7 +8,6 @@ const LOOKUP_URL =
   import.meta.env.VITE_LOOKUP_URL || '/auth/parents/lookup-id-by-email';
 const CLEAR_URL = import.meta.env.VITE_CLEAR_URL || '/user/delete-parent-child';
 
-
 /* ===================== Inline Styles ===================== */
 const S = {
   surface: {
@@ -331,7 +330,7 @@ export default function App() {
   //     setShowConfirm(false);
   //   }
   // };
-   const handleClear = async () => {
+  const handleClear = async () => {
     try {
       setLoading(true);
       const res = await fetch(CLEAR_URL, {
@@ -361,13 +360,13 @@ export default function App() {
   return (
     <div style={S.surface}>
       <ToastContainer
-{/*         position="top-right" */}
-              position="top-center"
+        // position="top-right"
+        position="top-center"
         newestOnTop
         closeOnClick
         pauseOnHover={false}
         theme="colored"
-         autoClose={2500}
+        autoClose={2500}
       />
 
       <ConfirmModal
@@ -493,19 +492,19 @@ export default function App() {
             </div>
           )}
 
-          {raw && (
-            ''
+          {
+            raw && ''
             // <details style={S.details}>
             //   {/* Using a plain summary; advanced chevron styling would require ::marker replacements not allowed inline */}
-            //   <summary style={S.summary}>Response JSON</summary>
-            //   <pre style={S.pre}>{JSON.stringify(raw, null, 2)}</pre>
+            //   {/* <summary style={S.summary}>Response JSON</summary>
+            //   <pre style={S.pre}>{JSON.stringify(raw, null, 2)}</pre> */}
             // </details>
-          )}
+          }
         </div>
 
         <div style={S.footer}>
           <div style={S.endpoints}>
-{/*             <span>
+            {/* <span>
               Using endpoint: <code style={S.mono}>{LOOKUP_URL}</code>
             </span>
             <span>
