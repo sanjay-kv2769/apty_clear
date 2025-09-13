@@ -477,12 +477,12 @@ export default function App() {
 
         <div style={S.footer}>
           <div style={S.endpoints}>
-            <span>
+{/*             <span>
               Using endpoint: <code style={S.mono}>{LOOKUP_URL}</code>
             </span>
             <span>
               Clear endpoint: <code style={S.mono}>{CLEAR_URL}</code>
-            </span>
+            </span> */}
           </div>
         </div>
       </div>
