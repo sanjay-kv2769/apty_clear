@@ -1,0 +1,3 @@
+/auth/*  http://13.60.220.96:8000/auth/:splat  200
+/user/*  http://13.60.220.96:8000/user/:splat  200
+/*       /index.html                               200
