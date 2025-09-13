@@ -308,7 +308,30 @@ export default function App() {
 
   const confirmClear = () => setShowConfirm(true);
 
-  const handleClear = async () => {
+  // const handleClear = async () => {
+  //   try {
+  //     setLoading(true);
+  //     const res = await fetch(CLEAR_URL, {
+  //       method: 'DELETE',
+  //       headers: { 'parent-id': parentId },
+  //     });
+  //     const json = await res.json().catch(() => ({}));
+  //     if (res.ok && json?.success) {
+  //       toast.success('Data cleared successfully.');
+  //     } else {
+  //       toast.error(
+  //         `Clear failed (HTTP ${res.status}). ${json?.message || 'Unknown'}`
+  //       );
+  //     }
+  //   } catch (err) {
+  //     console.error(err);
+  //     toast.error('Network or server error during clear.');
+  //   } finally {
+  //     setLoading(false);
+  //     setShowConfirm(false);
+  //   }
+  // };
+   const handleClear = async () => {
     try {
       setLoading(true);
       const res = await fetch(CLEAR_URL, {
@@ -316,8 +339,11 @@ export default function App() {
         headers: { 'parent-id': parentId },
       });
       const json = await res.json().catch(() => ({}));
+
       if (res.ok && json?.success) {
-        toast.success('Data cleared successfully.');
+        toast.success('Data cleared successfully.', {
+          onClose: () => window.location.reload(), // ← reload after toast ends
+        });
       } else {
         toast.error(
           `Clear failed (HTTP ${res.status}). ${json?.message || 'Unknown'}`
@@ -340,6 +366,7 @@ export default function App() {
         closeOnClick
         pauseOnHover={false}
         theme="colored"
+         autoClose={2500}
       />
 
       <ConfirmModal
